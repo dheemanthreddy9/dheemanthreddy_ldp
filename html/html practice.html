@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML Practice Website</title>
+    <link rel="stylesheet" href="style.css">   
+  </head>
+
+  <body>
+    <header>
+      <h1>Navigational Links</h1>
+      <nav>
+        <ul>
+          <li><a href="#brown-bear">Brown Bear</a></li>
+          <li><a href="#ship">Packing List</a></li>
+          <li><a href="#burger">Create a Burger</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="brown-bear">
+        <h2>The Brown Bear</h2>
+        <nav>
+          <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#habitat">Habitat</a></li>
+            <li><a href="#media">Media</a></li>
+          </ul>
+        </nav>
+
+        <article id="introduction">
+          <h3>About Brown Bears</h3>
+          <p>
+            The brown bear (<em>Ursus arctos</em>) is native to parts of northern Eurasia and North America. Its conservation status is currently
+            <strong>Least Concern</strong>.
+          </p>
+          <p>
+            There are many subspecies including the Atlas bear and Himalayan brown bear.
+          </p>
+          <a href="https://en.wikipedia.org/wiki/Brown_bear" target="_blank">Learn More</a>
+
+          <h4>Species</h4>
+          <ul>
+            <li>Arctos</li>
+            <li>Collarus</li>
+            <li>Horribilis</li>
+            <li>Nelsoni (Extinct)</li>
+          </ul>
+
+          <h4>Features</h4>
+          <p>Brown bears have large curved claws, huge paws and can vary in color.</p>
+        </article>
+
+        <aside>
+          <h3>Quick Fact</h3>
+          <p>Brown bears are found across much of North America and Eurasia.</p>
+        </aside>
+
+        <section id="habitat">
+          <h3>Habitat</h3>
+          <h4>Countries with Large Brown Bear Populations</h4>
+          <ol>
+            <li>Russia</li>
+            <li>United States</li>
+            <li>Canada</li>
+          </ol>
+
+          <h4>Countries with Small Brown Bear Populations</h4>
+          <p>Armenia, China, Finland, France, Greece, India, Japan, Nepal and many others.</p>
+        </section>
+
+        <section id="media">
+          <h3>Media</h3>
+
+          <figure>
+            <img src="https://content.codecademy.com/courses/web-101/web101-image_brownbear.jpg" alt="Brown Bear" width="400">
+            <figcaption>A brown bear in the wild.</figcaption>
+          </figure>
+
+          <audio controls>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+          </audio>
+
+          <video controls width="400">
+            <source src="https://content.codecademy.com/courses/freelance-1/unit-1/lesson-2/htmlcss1-vid_brown-bear.mp4">
+          </video>
+
+          <embed src="https://content.codecademy.com/courses/SemanticHTML/dog-on-beach.gif">
+        </section>
+      </section>
+
+      <section id="ship">
+        <h2>Ship To It - Company Packing List</h2>
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Company Name</th>
+              <th>Items to Ship</th>
+              <th>Next Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Adam's Greenworks</td>
+              <td>14</td>
+              <td>Package Items</td>
+            </tr>
+            <tr>
+              <td>Davie's Burgers</td>
+              <td>2</td>
+              <td>Send Invoice</td>
+            </tr>
+            <tr>
+              <td rowspan="2">Baker's Bike Shop</td>
+              <td>3</td>
+              <td>Send Invoice</td>
+            </tr>
+            <tr>
+              <td colspan="2">Ship</td>
+            </tr>
+            <tr>
+              <td>Summit Resort Rentals</td>
+              <td>4</td>
+              <td>Ship</td>
+            </tr>
+            <tr>
+              <td>Strike Fitness</td>
+              <td>1</td>
+              <td>Enter Order</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td><strong>Total</strong></td>
+              <td><strong>24</strong></td>
+              <td></td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+
+      <section id="burger">
+        <h2>Create a Burger!</h2>
+        <form action="#" method="post">
+          <section class="protein important">
+            <label for="patty">Protein</label><br>
+            <input type="text" id="patty" name="patty">
+          </section>
+
+          <section class="patties">
+            <label for="amount">How many patties?</label><br>
+            <input type="number" id="amount" name="amount" step="1">
+          </section>
+
+          <section class="cooked">
+            <label for="doneness">How do you want your patty cooked?</label><br>
+            <span>Rare</span>
+            <input type="range" id="doneness" name="doneness" min="1" max="5" value="3">
+            <span>Well-Done</span>
+          </section>
+
+          <section class="toppings">
+            <span>Toppings</span><br>
+            <input type="checkbox" id="lettuce" name="topping" value="lettuce">
+            <label for="lettuce">Lettuce</label>
+            <input type="checkbox" id="tomato" name="topping" value="tomato">
+            <label for="tomato">Tomato</label>
+            <input type="checkbox" id="onion" name="topping" value="onion">
+            <label for="onion">Onion</label>
+          </section>
+
+          <section class="cheesy">
+            <span>Add Cheese?</span><br>
+            <input type="radio" id="yes" name="cheese" value="yes">
+            <label for="yes">Yes</label>
+            <input type="radio" id="no" name="cheese" value="no">
+            <label for="no">No</label>
+          </section>
+
+          <section class="bun-type">
+            <label for="bun">Choose Bun</label><br>
+            <select id="bun" name="bun">
+              <option value="sesame">Sesame</option>
+              <option value="potato">Potato</option>
+              <option value="pretzel">Pretzel</option>
+            </select>
+          </section>
+
+          <section class="sauce-selection">
+            <label for="sauce">Sauce</label><br>
+            <input list="sauces" id="sauce" name="sauce">
+            <datalist id="sauces">
+              <option value="ketchup">
+              <option value="mayo">
+              <option value="mustard">
+            </datalist>
+          </section>
+
+          <section class="extra-info">
+            <label for="extra">Extra Instructions</label><br>
+            <textarea id="extra" name="extra" rows="3" cols="40">No special requests.</textarea>
+          </section>
+
+          <input type="submit" value="Submit Order">
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
