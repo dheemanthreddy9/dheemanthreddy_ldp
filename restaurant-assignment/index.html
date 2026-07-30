@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant Billing System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Restaurant</h1>
+    <div class="container">
+        <section class="tables-section">
+            <h2>Tables</h2>
+            <input
+                type="text"
+                id="table-search"
+                placeholder="Search Table">
+            <div class="tables-container">
+            </div>
+        </section>
+        <section class="menu-section">
+            <h2>Menu</h2>
+            <input
+                type="text"
+                id="menu-search"
+                placeholder="Search menu... by course, by food">
+            <div class="menu-container">
+            </div>
+        </section>
+    </div>
+
+   <div class="popup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h2>Table Order Details</h2>
+                <button class="close-btn">
+                    ✖
+                </button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Servings</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody class="order-list">
+                </tbody>
+            </table>
+            <div class="total-section">
+                <h3>Total : ₹0</h3>
+            </div>
+            <div class="button-section">
+                <button class="bill-btn">
+                    Close Session (Generate Bill)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/data.js"></script>
+    <script src="scripts/render.js"></script>
+    <script src="scripts/dragdrop.js"></script>
+    <script src="scripts/search.js"></script>
+    <script src="scripts/popup.js"></script>
+    <script src="scripts/bill.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>
