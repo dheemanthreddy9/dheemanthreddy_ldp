@@ -1,6 +1,5 @@
-/* ===========================
-   Global Styles
-=========================== */
+//Global Styles
+
 
 * {
   margin: 0;
@@ -13,13 +12,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* ===========================
-   Button
-=========================== */
 
-/* ===========================
-   Button
-=========================== */
+  // Button
 
 .button {
   padding: 12px 24px;
@@ -75,9 +69,9 @@ body {
   cursor: not-allowed;
 }
 
-/* ===========================
-   Typography
-=========================== */
+
+//   Typography
+
 
 .title {
   font-size: 32px;
@@ -101,9 +95,9 @@ body {
   color: #a1a1aa;
 }
 
-/* ===========================
-   Avatar
-=========================== */
+
+  // Avatar
+
 
 .avatar {
   width: 45px;
@@ -112,9 +106,9 @@ body {
   object-fit: cover;
 }
 
-/* ===========================
-   Sidebar Item
-=========================== */
+
+ //  Sidebar Item
+
 
 .sidebar-item {
   width: 220px;
@@ -138,9 +132,9 @@ body {
   background-color: #343244;
 }
 
-/* ===========================
-   Summary Card
-=========================== */
+
+// Summary Card
+
 
 .summary-card {
   width: 180px;
@@ -171,9 +165,8 @@ body {
   gap: 6px;
 }
 
-/* ===========================
-   Action Card
-=========================== */
+
+ //  Action Card
 
 .action-card {
   width: 300px;
@@ -189,9 +182,9 @@ body {
   gap: 20px;
 }
 
-/* ===========================
-   Profile Menu
-=========================== */
+
+  //Profile Menu
+
 
 .profile-menu {
   display: flex;
@@ -199,9 +192,8 @@ body {
   gap: 12px;
 }
 
-/* ===========================
-   Contract Table
-=========================== */
+
+ //  Contract Table
 
 .contract-table {
   width: 100%;
@@ -271,9 +263,9 @@ tbody tr {
 }
 
 
-/* ==========================================
-   DASHBOARD LAYOUT
-========================================== */
+
+  // DASHBOARD LAYOUT
+
 
 .dashboard {
   display: flex;
