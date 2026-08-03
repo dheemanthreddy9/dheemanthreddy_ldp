@@ -1,0 +1,304 @@
+/* ===========================
+   Global Styles
+=========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1c1c28;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===========================
+   Button
+=========================== */
+
+.button {
+  background-color: #6c5ce7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background-color: #5b4cd9;
+}
+
+/* ===========================
+   Typography
+=========================== */
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
+}
+
+.subtitle {
+  font-size: 22px;
+  font-weight: 600;
+  color: white;
+}
+
+.body {
+  font-size: 16px;
+  color: white;
+}
+
+.caption {
+  font-size: 14px;
+  color: #a1a1aa;
+}
+
+/* ===========================
+   Avatar
+=========================== */
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ===========================
+   Sidebar Item
+=========================== */
+
+.sidebar-item {
+  width: 220px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 14px 16px;
+
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sidebar-item:hover {
+  background-color: #2d2b39;
+}
+
+.sidebar-item.active {
+  background-color: #343244;
+}
+
+/* ===========================
+   Summary Card
+=========================== */
+
+.summary-card {
+  width: 180px;
+  padding: 20px;
+  border-radius: 12px;
+  background: #24222f;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.summary-icon {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #2d2b39;
+  border-radius: 12px;
+}
+
+.summary-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ===========================
+   Action Card
+=========================== */
+
+.action-card {
+  width: 300px;
+
+  background: #24222f;
+
+  border-radius: 12px;
+
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===========================
+   Profile Menu
+=========================== */
+
+.profile-menu {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ===========================
+   Contract Table
+=========================== */
+
+.contract-table {
+  width: 100%;
+
+  background: #24222f;
+
+  border-radius: 12px;
+
+  padding: 24px;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+.tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  background: transparent;
+  border: 1px solid #3d3b4f;
+  border-radius: 8px;
+  padding: 10px 18px;
+  color: #8d8d99;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tab:hover {
+  border-color: #6c5ce7;
+  color: white;
+}
+
+.active-tab {
+  background: #343244;
+  border-color: #6c5ce7;
+  color: white;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  color: #8d8d99;
+  padding: 14px;
+}
+
+td {
+  color: white;
+  padding: 18px 14px;
+}
+
+tbody tr {
+  border-top: 1px solid #38364b;
+}
+
+
+/* ==========================================
+   DASHBOARD LAYOUT
+========================================== */
+
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  background: #1c1c28;
+}
+
+/* Sidebar */
+
+.sidebar {
+  width: 250px;
+  background: #181823;
+
+  padding: 30px 20px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  margin-top: 60px;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+}
+
+/* Main */
+
+.main {
+  flex: 1;
+  padding: 35px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Top Cards */
+
+.top-cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 24px;
+
+  margin-top: 35px;
+}
+
+.summary-container {
+  display: flex;
+  gap: 20px;
+}
+
+.table-section {
+  margin-top: 40px;
+}
