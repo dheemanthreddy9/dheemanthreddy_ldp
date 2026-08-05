@@ -16,7 +16,7 @@ const SidebarItem = ({
 }: SidebarItemProps) => {
   return (
     <div className={`sidebar-item ${active ? "active" : ""}`}>
-      <Icon icon={icon} size={18} color="#FFFFFF" />
+      <Icon icon={icon} size={18} className="icon-white" />
 
       <Typography
         text={text}

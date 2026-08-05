@@ -35,7 +35,7 @@ const App = () => {
           <Icon
             icon={PiSquaresFourFill}
             size={30}
-            color="#6C5CE7"
+            className="icon-primary"
           />
 
           <Typography

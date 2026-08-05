@@ -22,11 +22,7 @@ const ProfileMenu = ({
         variant="body"
       />
 
-      <Icon
-        icon={FiChevronDown}
-        size={18}
-        color="#FFFFFF"
-      />
+      <Icon icon={FiChevronDown} size={18} className="icon-white" />
     </div>
   );
 };

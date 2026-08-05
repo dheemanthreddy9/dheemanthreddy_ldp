@@ -1,4 +1,5 @@
 import Typography from "../../atoms/Typography/Typography";
+import { TEXTS } from "../../../utils/constants";
 
 const ContractTable = () => {
   return (
@@ -6,19 +7,12 @@ const ContractTable = () => {
 
       <div className="table-header">
 
-        <Typography
-          text="Your Funding"
-          variant="subtitle"
-        />
+        <Typography text={TEXTS.YOUR_FUNDING} variant="subtitle" />
 
         <div className="tabs">
-  <button className="tab active-tab">
-    My Contracts
-  </button>
+  <button className="tab active-tab">{TEXTS.MY_CONTRACTS}</button>
 
-  <button className="tab">
-    My Cash Kicks
-  </button>
+  <button className="tab">{TEXTS.MY_CASH_KICKS}</button>
 </div>
 
       </div>
