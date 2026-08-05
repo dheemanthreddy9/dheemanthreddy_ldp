@@ -4,14 +4,22 @@ interface IconProps {
   icon: IconType;
   size?: number;
   color?: string;
+  className?: string;
 }
 
 const Icon = ({
   icon: IconComponent,
-  size = 24,
-  color = "#FFFFFF",
+  size,
+  color,
+  className,
 }: IconProps) => {
-  return <IconComponent size={size} color={color} />;
+  return (
+    <IconComponent
+      className={className}
+      size={size}
+      color={color}
+    />
+  );
 };
 
 export default Icon;

@@ -24,8 +24,7 @@ const ProfileMenu = ({
 
       <Icon
         icon={FiChevronDown}
-        size={18}
-        color="#FFFFFF"
+        className="profile-menu__icon"
       />
     </div>
   );

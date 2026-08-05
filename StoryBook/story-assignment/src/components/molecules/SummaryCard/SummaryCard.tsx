@@ -18,12 +18,12 @@ const SummaryCard = ({
   return (
     <div className="summary-card">
       <div className="summary-icon">
-        <Icon icon={icon} size={24} color="#B794F4" />
+        <Icon icon={icon} className="summary-card__main-icon" />
       </div>
 
       <div className="summary-title">
         <Typography text={title} variant="caption" />
-        <Icon icon={FiInfo} size={14} color="#8D8D99" />
+        <Icon icon={FiInfo} className="summary-card__info-icon" />
       </div>
 
       <Typography text={value} variant="subtitle" />

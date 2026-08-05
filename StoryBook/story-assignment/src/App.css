@@ -1,5 +1,4 @@
-//Global Styles
-
+/* Global Styles */
 
 * {
   margin: 0;
@@ -13,7 +12,7 @@ body {
 }
 
 
-  // Button
+  /* Button */
 
 .button {
   padding: 12px 24px;
@@ -70,7 +69,7 @@ body {
 }
 
 
-//   Typography
+/* Typography */
 
 
 .title {
@@ -96,7 +95,7 @@ body {
 }
 
 
-  // Avatar
+  /* Avatar */
 
 
 .avatar {
@@ -107,7 +106,7 @@ body {
 }
 
 
- //  Sidebar Item
+ /* Sidebar Item */
 
 
 .sidebar-item {
@@ -133,7 +132,7 @@ body {
 }
 
 
-// Summary Card
+/* Summary Card */
 
 
 .summary-card {
@@ -166,7 +165,7 @@ body {
 }
 
 
- //  Action Card
+ /* Action Card */
 
 .action-card {
   width: 300px;
@@ -183,7 +182,7 @@ body {
 }
 
 
-  //Profile Menu
+  /* Profile Menu */
 
 
 .profile-menu {
@@ -192,8 +191,35 @@ body {
   gap: 12px;
 }
 
+.logo__icon,
+.sidebar-item__icon,
+.icon-text__icon,
+.profile-menu__icon,
+.summary-card__main-icon,
+.summary-card__info-icon {
+  color: inherit;
+}
 
- //  Contract Table
+.logo__icon {
+  color: #6c5ce7;
+}
+
+.sidebar-item__icon,
+.profile-menu__icon,
+.icon-text__icon {
+  color: #ffffff;
+}
+
+.summary-card__main-icon {
+  color: #b794f4;
+}
+
+.summary-card__info-icon {
+  color: #8d8d99;
+}
+
+
+ /* Contract Table */
 
 .contract-table {
   width: 100%;
@@ -264,7 +290,7 @@ tbody tr {
 
 
 
-  // DASHBOARD LAYOUT
+  /* DASHBOARD LAYOUT */
 
 
 .dashboard {

@@ -11,7 +11,7 @@ interface IconTextProps {
 const IconText = ({ icon, text }: IconTextProps) => {
   return (
     <div className="icon-text">
-      <Icon icon={icon} size={20} />
+      <Icon icon={icon} className="icon-text__icon" />
       <Typography text={text} variant="body" />
     </div>
   );
