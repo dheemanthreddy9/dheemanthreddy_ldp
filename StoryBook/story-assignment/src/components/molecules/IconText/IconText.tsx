@@ -1,0 +1,20 @@
+import type { IconType } from "react-icons";
+
+import Icon from "../../atoms/Icon/Icon";
+import Typography from "../../atoms/Typography/Typography";
+
+interface IconTextProps {
+  icon: IconType;
+  text: string;
+}
+
+const IconText = ({ icon, text }: IconTextProps) => {
+  return (
+    <div className="icon-text">
+      <Icon icon={icon} className="icon-text__icon" />
+      <Typography text={text} variant="body" />
+    </div>
+  );
+};
+
+export default IconText;
