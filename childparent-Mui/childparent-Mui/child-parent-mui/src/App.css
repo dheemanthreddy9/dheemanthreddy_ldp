@@ -34,13 +34,15 @@ body {
   padding: 16px 16px 160px;
 }
 
-.export-report-fields {
+..export-report-fields {
   display: flex;
   gap: 24px;
+  flex-wrap: wrap;
 }
 
 .export-report-field-column {
   flex: 1;
+  min-width: 0;
 }
 
 .export-report-label {
@@ -50,6 +52,7 @@ body {
 
 .export-report-picker-wrapper {
   margin-top: 4px;
+  width: 100%;
 }
 
 .export-report-actions {
@@ -63,7 +66,9 @@ body {
 }
 
 .date-picker-field {
-  width: 325px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .calendar-icon {
