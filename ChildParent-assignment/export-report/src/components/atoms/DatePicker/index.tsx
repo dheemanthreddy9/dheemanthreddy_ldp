@@ -9,11 +9,7 @@ const DatePicker = ({ id }: DatePickerProps) => (
     <input type="date" id={id} />
 
     <label htmlFor={id}>
-      <img
-        src={calendarIcon}
-        alt="Calendar"
-        className="calendar-icon"
-      />
+        <img src={calendarIcon} alt="calendar" className="calendar-icon" />
     </label>
   </div>
 );
