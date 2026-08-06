@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+  background: #f5f5f5;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.export-report-paper {
+  width: 707px;
+  min-height: 358px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.export-report-header {
+  padding: 16px;
+}
+
+.export-report-title {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.export-report-date-section {
+  padding: 16px 16px 160px;
+}
+
+.export-report-fields {
+  display: flex;
+  gap: 24px;
+}
+
+.export-report-field-column {
+  flex: 1;
+}
+
+.export-report-label {
+  color: #374151;
+  margin-bottom: 4px;
+}
+
+.export-report-picker-wrapper {
+  margin-top: 4px;
+}
+
+.export-report-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+}
+
+.export-report-button {
+  background-color: #1976d2;
+}
+
+.date-picker-field {
+  width: 325px;
+}
+
+.calendar-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
