@@ -14,14 +14,39 @@ export const colors = {
 
 export const typography = {
   fontFamily: "'Inter'",
+  h1: { fontFamily: "'Inter'" },
+  h2: { fontFamily: "'Inter'" },
+  h3: { fontFamily: "'Inter'" },
+  h4: { fontFamily: "'Inter'" },
+  h5: {
+    fontFamily: "'Inter'",
+    fontWeight: 500,
+    fontSize: '20px',
+    lineHeight: '30px',
+    letterSpacing: '0%',
+    verticalAlign: 'middle',
+  },
+  h6: { fontFamily: "'Inter'" },
+  subtitle1: { fontFamily: "'Inter'" },
+  subtitle2: { fontFamily: "'Inter'", fontWeight: 500, fontSize: '16px', lineHeight: '24px' },
+  body1: {
+    fontFamily: "'Inter'",
+    fontWeight: 500,
+    fontSize: '16px',
+    lineHeight: '24px',
+    letterSpacing: '0%',
+    verticalAlign: 'middle',
+  },
   body2: {
-    fontFamily: "'Inter', sans-serif",
+    fontFamily: "'Inter'",
     fontWeight: 400,
     fontSize: '14px',
     lineHeight: '20px',
     letterSpacing: '0%',
-    color: '#224DFF',
   },
+  caption: { fontFamily: "'Inter'" },
+  button: { fontFamily: "'Inter'" },
+  overline: { fontFamily: "'Inter'" },
 };
 
 export const layout = {
