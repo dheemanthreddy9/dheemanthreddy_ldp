@@ -32,7 +32,7 @@ export const CandidateDetails: React.FC<CandidateDetailsProps> = ({ candidate, o
           </Typography>
         </div>
         <div className="header-actions">
-          <Button variant="outline" onClick={onPreAdverseAction} disabled={candidate.adjudication === 'ADVERSE ACTION'}>Pre-Adverse Action</Button>
+          <Button variant="outline" onClick={onPreAdverseAction}>Pre-Adverse Action</Button>
           <Button variant="primary">Engage</Button>
         </div>
       </div>
