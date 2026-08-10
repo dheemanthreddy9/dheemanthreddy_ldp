@@ -1,8 +1,8 @@
 import type { IconType } from "react-icons";
 import { FiInfo } from "react-icons/fi";
 
-import Icon from "../../atoms/Icon/Icon";
-import Typography from "../../atoms/Typography/Typography";
+import Icon from "../../atoms/Icon";
+import Typography from "../../atoms/Typography";
 
 interface SummaryCardProps {
   icon: IconType;

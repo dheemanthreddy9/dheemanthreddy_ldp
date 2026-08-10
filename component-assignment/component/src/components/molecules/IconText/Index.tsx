@@ -1,7 +1,7 @@
 import type { IconType } from "react-icons";
 
-import Icon from "../../atoms/Icon/Icon";
-import Typography from "../../atoms/Typography/Typography";
+import Icon from "../../atoms/Icon";
+import Typography from "../../atoms/Typography";
 
 interface IconTextProps {
   icon: IconType;

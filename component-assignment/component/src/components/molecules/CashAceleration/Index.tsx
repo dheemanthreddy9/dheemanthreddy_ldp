@@ -1,4 +1,4 @@
-import Typography from "../../atoms/Typography/Typography";
+import Typography from "../../atoms/Typography";
 import { TEXTS } from "../../../utils/constants";
 
 const ContractTable = () => {

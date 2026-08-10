@@ -1,8 +1,8 @@
 import { FiChevronDown } from "react-icons/fi";
 
-import Avatar from "../../atoms/Avatar/Avatar";
-import Icon from "../../atoms/Icon/Icon";
-import Typography from "../../atoms/Typography/Typography";
+import Avatar from "../../atoms/Avatar";
+import Icon from "../../atoms/Icon";
+import Typography from "../../atoms/Typography";
 
 interface ProfileMenuProps {
   image: string;

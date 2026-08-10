@@ -6,8 +6,8 @@ interface AvatarProps {
 
 const Avatar = ({
   src,
-  alt = "Avatar",
-  size = 45,
+  alt,
+  size,
 }: AvatarProps) => {
   return (
     <img

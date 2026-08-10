@@ -2,14 +2,14 @@ import "./App.css";
 
 import avatar from "./assets/images/avatar.png";
 
-import Typography from "./components/atoms/Typography/Typography";
-import Icon from "./components/atoms/Icon/Icon";
+import Typography from "./components/atoms/Typography";
+import Icon from "./components/atoms/Icon";
 
-import SidebarItem from "./components/molecules/SideBar/SideBar";
-import SummaryCard from "./components/molecules/SummaryCard/SummaryCard";
-import ActionCard from "./components/molecules/ActionCard/Actioncard";
-import ProfileMenu from "./components/molecules/ProfileMenu/ProfileMenu";
-import ContractTable from "./components/molecules/CashAceleration/CashAceleration";
+import SidebarItem from "./components/molecules/SideBar";
+import SummaryCard from "./components/molecules/SummaryCard";
+import ActionCard from "./components/molecules/ActionCard";
+import ProfileMenu from "./components/molecules/ProfileMenu";
+import ContractTable from "./components/molecules/CashAceleration";
 
 import {
   FiHome,

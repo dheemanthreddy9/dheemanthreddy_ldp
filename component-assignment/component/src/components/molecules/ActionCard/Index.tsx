@@ -1,5 +1,5 @@
-import Button from "../../atoms/Button/Button";
-import Typography from "../../atoms/Typography/Typography";
+import Button from "../../atoms/Button";
+import Typography from "../../atoms/Typography";
 
 interface ActionCardProps {
   title: string;
