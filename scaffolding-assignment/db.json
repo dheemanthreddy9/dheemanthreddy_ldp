@@ -1,0 +1,85 @@
+{
+  "payments": [
+    {
+      "id": 1,
+      "dueDate": "Sep 03, 2021",
+      "daysFromNow": "23 day(s) from now",
+      "status": "Upcoming",
+      "expectedAmount": "-$14,204.55",
+      "outstanding": "$156,250.05"
+    },
+    {
+      "id": 2,
+      "dueDate": "Oct 03, 2021",
+      "daysFromNow": "53 day(s) from now",
+      "status": "Upcoming",
+      "expectedAmount": "-$14,204.55",
+      "outstanding": "$142,045.50"
+    },
+    {
+      "id": 3,
+      "dueDate": "Nov 03, 2021",
+      "daysFromNow": "84 day(s) from now",
+      "status": "Upcoming",
+      "expectedAmount": "-$14,204.55",
+      "outstanding": "$127,840.95"
+    },
+    {
+      "id": 4,
+      "dueDate": "Dec 03, 2021",
+      "daysFromNow": "114 day(s) from now",
+      "status": "Upcoming",
+      "expectedAmount": "-$14,204.55",
+      "outstanding": "$113,636.40"
+    },
+    {
+      "id": 5,
+      "dueDate": "Jan 03, 2021",
+      "daysFromNow": "145 day(s) from now",
+      "status": "Upcoming",
+      "expectedAmount": "-$14,204.55",
+      "outstanding": "$99,431.85"
+    },
+    {
+      "id": 6,
+      "dueDate": "Feb 03, 2021",
+      "daysFromNow": "176 day(s) from now",
+      "status": "Upcoming",
+      "expectedAmount": "-$14,204.55",
+      "outstanding": "$85,227.30"
+    }
+  ],
+  "contracts": [
+    {
+      "id": 1,
+      "name": "Contract 1",
+      "type": "Monthly",
+      "perPayment": "$12,000.25",
+      "termLength": "12 months",
+      "termFee": "12.0% fee",
+      "paymentAmount": "$126,722.64",
+      "secondaryPaymentAmount": null
+    },
+    {
+      "id": 2,
+      "name": "Contract 1",
+      "type": "Monthly",
+      "perPayment": "$6,000.00",
+      "termLength": "12 months",
+      "termFee": "12.0% fee",
+      "paymentAmount": "$23,277.36",
+      "secondaryPaymentAmount": "$63,380.00"
+    }
+  ],
+  "cashKicks": [
+    {
+      "id": 1,
+      "name": "My first advance",
+      "status": "Pending",
+      "maturity": "Apr 03, 2022",
+      "totalReceived": "$150,000.00",
+      "totalReceivedFee": "12% fee",
+      "totalFinanced": "$170,454.55"
+    }
+  ]
+}
