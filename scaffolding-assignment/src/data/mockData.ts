@@ -2,7 +2,7 @@ export const mockData = {
   user: {
     name: 'Kane Cooper',
     greeting: 'Good afternoon 👋',
-    date: 'April 02, 2021',
+    date: 'April 02, 2026',
     avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=250&q=80',
     avatarAlt: 'Kane Cooper Profile Photo',
   },
@@ -13,7 +13,7 @@ export const mockData = {
   metrics: {
     term: {
       dueLabel: 'Due in 30 day(s)',
-      date: 'May 03, 2021',
+      date: 'May 03, 2026',
       amount: '$14,204.55',
       labelPrefix: 'Due - ',
     },
@@ -35,7 +35,7 @@ export const mockData = {
   payments: [
     {
       id: 1,
-      dueDate: 'Mar 03, 2021',
+      dueDate: 'Mar 03, 2026',
       daysFromNow: '31 day(s) from now',
       status: 'Upcoming',
       expectedAmount: '-$14,204.55',
@@ -43,7 +43,7 @@ export const mockData = {
     },
     {
       id: 2,
-      dueDate: 'Jun 03, 2021',
+      dueDate: 'Jun 03, 2026',
       daysFromNow: '62 day(s) from now',
       status: 'Upcoming',
       expectedAmount: '-$14,204.55',
@@ -51,7 +51,7 @@ export const mockData = {
     },
     {
       id: 3,
-      dueDate: 'Jul 03, 2021',
+      dueDate: 'Jul 03, 2026',
       daysFromNow: '92 day(s) from now',
       status: 'Upcoming',
       expectedAmount: '-$14,204.55',
@@ -59,7 +59,7 @@ export const mockData = {
     },
     {
       id: 4,
-      dueDate: 'Aug 03, 2021',
+      dueDate: 'Aug 03, 2026',
       daysFromNow: '123 day(s) from now',
       status: 'Upcoming',
       expectedAmount: '-$14,204.55',
@@ -67,7 +67,7 @@ export const mockData = {
     },
     {
       id: 5,
-      dueDate: 'Sep 03, 2021',
+      dueDate: 'Sep 03, 2026',
       daysFromNow: '153 day(s) from now',
       status: 'Upcoming',
       expectedAmount: '-$14,204.55',
@@ -75,7 +75,7 @@ export const mockData = {
     },
     {
       id: 6,
-      dueDate: 'Oct 03, 2021',
+      dueDate: 'Oct 03, 2026',
       daysFromNow: '184 day(s) from now',
       status: 'Upcoming',
       expectedAmount: '-$14,204.55',
