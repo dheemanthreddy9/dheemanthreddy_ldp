@@ -12,6 +12,16 @@ import ProfileMenu from "./components/molecules/ProfileMenu/ProfileMenu";
 import ContractTable from "./components/molecules/CashAceleration/CashAceleration";
 
 import {
+  ACTION_CARD_CONSTANTS,
+  APP_NAME,
+  HEADER_SUBTITLE,
+  HEADER_TITLE,
+  NAV_ITEMS,
+  SUMMARY_CARD_CONSTANTS,
+  USER_NAME,
+} from "./utils/constants";
+
+import {
   FiHome,
   FiLink2,
   FiPlayCircle,
@@ -38,7 +48,7 @@ const App = () => {
           />
 
           <Typography
-            text="Seeder"
+            text={APP_NAME}
             variant="subtitle"
           />
 
@@ -48,12 +58,12 @@ const App = () => {
 
           <SidebarItem
             icon={FiHome}
-            text="Home"
+            text={NAV_ITEMS.HOME}
           />
 
           <SidebarItem
             icon={FiLink2}
-            text="Cash Acceleration"
+            text={NAV_ITEMS.CASH_ACCELERATION}
             active
           />
 
@@ -63,7 +73,7 @@ const App = () => {
 
           <SidebarItem
             icon={FiPlayCircle}
-            text="Watch How To"
+            text={NAV_ITEMS.WATCH_HOW_TO}
           />
 
         </div>
@@ -79,12 +89,12 @@ const App = () => {
           <div>
 
             <Typography
-              text="Cash acceleration"
+              text={HEADER_TITLE}
               variant="title"
             />
 
             <Typography
-              text="Place to create new cash kicks to run your business"
+              text={HEADER_SUBTITLE}
               variant="caption"
             />
 
@@ -92,7 +102,7 @@ const App = () => {
 
           <ProfileMenu
             image={avatar}
-            name="Jessie Wilson"
+            name={USER_NAME}
           />
 
         </div>
@@ -105,28 +115,28 @@ const App = () => {
 
             <SummaryCard
               icon={FiCalendar}
-              title="Term cap"
-              value="12 Months"
+              title={SUMMARY_CARD_CONSTANTS.TERM_CAP.TITLE}
+              value={SUMMARY_CARD_CONSTANTS.TERM_CAP.VALUE}
             />
 
             <SummaryCard
               icon={FiFileText}
-              title="Available Credit"
-              value="$709.45k"
+              title={SUMMARY_CARD_CONSTANTS.AVAILABLE_CREDIT.TITLE}
+              value={SUMMARY_CARD_CONSTANTS.AVAILABLE_CREDIT.VALUE}
             />
 
             <SummaryCard
               icon={FiPercent}
-              title="Max Interest Rate"
-              value="12.00%"
+              title={SUMMARY_CARD_CONSTANTS.MAX_INTEREST_RATE.TITLE}
+              value={SUMMARY_CARD_CONSTANTS.MAX_INTEREST_RATE.VALUE}
             />
 
           </div>
 
           <ActionCard
-            title="Launch a new Cash Kick"
-            description="You have upto $709,546 available for a new cash advance."
-            buttonText="New Cash Kick"
+            title={ACTION_CARD_CONSTANTS.TITLE}
+            description={ACTION_CARD_CONSTANTS.DESCRIPTION}
+            buttonText={ACTION_CARD_CONSTANTS.BUTTON_TEXT}
           />
 
         </div>

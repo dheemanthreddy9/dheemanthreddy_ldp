@@ -1,64 +1,53 @@
 import Typography from "../../atoms/Typography/Typography";
+import {
+  CASH_ACCELERATION_TITLE,
+  TAB_MY_CONTRACTS,
+  TAB_MY_CASH_KICKS,
+  CONTRACT_TABLE_HEADERS,
+  MOCK_CONTRACTS,
+} from "../../../utils/constants";
 
 const ContractTable = () => {
   return (
     <div className="contract-table">
-
       <div className="table-header">
-
         <Typography
-          text="Your Funding"
+          text={CASH_ACCELERATION_TITLE}
           variant="subtitle"
         />
 
         <div className="tabs">
-  <button className="tab active-tab">
-    My Contracts
-  </button>
+          <button className="tab active-tab">
+            {TAB_MY_CONTRACTS}
+          </button>
 
-  <button className="tab">
-    My Cash Kicks
-  </button>
-</div>
-
+          <button className="tab">
+            {TAB_MY_CASH_KICKS}
+          </button>
+        </div>
       </div>
 
       <table>
-
         <thead>
-
           <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Per Payment</th>
-            <th>Term Length</th>
-            <th>Payment Remaining</th>
+            {CONTRACT_TABLE_HEADERS.map((header) => (
+              <th key={header}>{header}</th>
+            ))}
           </tr>
-
         </thead>
 
         <tbody>
-
-          <tr>
-            <td>Contract 1</td>
-            <td>Monthly</td>
-            <td>$12,000</td>
-            <td>12 months</td>
-            <td>$126,000</td>
-          </tr>
-
-          <tr>
-            <td>Contract 2</td>
-            <td>Monthly</td>
-            <td>$6,000</td>
-            <td>9 months</td>
-            <td>$63,000</td>
-          </tr>
-
+          {MOCK_CONTRACTS.map((contract) => (
+            <tr key={contract.id}>
+              <td>{contract.name}</td>
+              <td>{contract.type}</td>
+              <td>{contract.perPayment}</td>
+              <td>{contract.termLength}</td>
+              <td>{contract.paymentRemaining}</td>
+            </tr>
+          ))}
         </tbody>
-
       </table>
-
     </div>
   );
 };
