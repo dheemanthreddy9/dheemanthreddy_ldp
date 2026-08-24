@@ -14,6 +14,28 @@ html,
   font-family: 'Inter', sans-serif;
 }
 
+.svg-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+}
+
+.svg-icon-small {
+  width: 18px;
+  height: 18px;
+}
+
+.svg-icon-medium {
+  width: 20px;
+  height: 20px;
+}
+
+.svg-icon-large {
+  width: 24px;
+  height: 24px;
+}
+
 .app-container {
   display: flex;
   min-height: 100vh;
@@ -31,6 +53,9 @@ html,
   flex-shrink: 0;
   border-radius: 8px;
   box-shadow: 0px 4px 28px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 24px;
+  height: calc(100vh - 48px);
 }
 
 .sidebar-brand {
@@ -727,27 +752,9 @@ html,
 }
 
 .candidates-table th:nth-child(2),
-.candidates-table td:nth-child(2) {
-  width: 180px;
-}
-
+.candidates-table td:nth-child(2),
 .candidates-table th:nth-child(3),
 .candidates-table td:nth-child(3) {
-  width: 180px;
-}
-
-.details-table-card .candidates-table th:nth-child(1),
-.details-table-card .candidates-table td:nth-child(1) {
-  width: 220px;
-}
-
-.details-table-card .candidates-table th:nth-child(2),
-.details-table-card .candidates-table td:nth-child(2) {
-  width: 180px;
-}
-
-.details-table-card .candidates-table th:nth-child(3),
-.details-table-card .candidates-table td:nth-child(3) {
   width: 180px;
 }
 
@@ -757,8 +764,4 @@ html,
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
-}
-
-.charges-list-preview {
-  color: #696a6e !important;
-}
+}

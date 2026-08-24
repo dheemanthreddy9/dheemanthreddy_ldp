@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import './App.css';
-import { Sidebar } from './components/molecules/Sidebar';
-import { CandidatesTable } from './components/molecules/CandidatesTable';
-import type { Candidate } from './components/molecules/CandidatesTable';
-import { CandidateDetails } from './components/molecules/CandidateDetails';
-import { PreAdverseAction } from './components/molecules/PreAdverseAction';
-import { PreviewNoticeModal } from './components/molecules/PreviewNoticeModal';
-import { initialCandidates } from './data/constants';
-
+import { Sidebar } from './components/organisms/Sidebar';
+import { CandidatesTable } from './components/organisms/CandidatesTable';
+import type { Candidate } from './components/organisms/CandidatesTable';
+import { CandidateDetails } from './components/organisms/CandidateDetails';
+import { PreAdverseAction } from './components/organisms/PreAdverseAction';
+import { PreviewNoticeModal } from './components/organisms/PreviewNoticeModal';
+import { initialCandidates, ADJUDICATION_ADVERSE_ACTION, STATUS_CONSIDER } from './data/constants';
 
 export const App: React.FC = () => {
   const [candidates, setCandidates] = useState<Candidate[]>(initialCandidates);
@@ -44,10 +43,10 @@ export const App: React.FC = () => {
 
   const handleSubmitNotice = () => {
     if (selectedCandidate) {
-      setCandidates(prevCandidates => 
-        prevCandidates.map(c => 
-          c.id === selectedCandidate.id 
-            ? { ...c, adjudication: 'ADVERSE ACTION', status: 'CONSIDER' } 
+      setCandidates((prevCandidates) =>
+        prevCandidates.map((c) =>
+          c.id === selectedCandidate.id
+            ? { ...c, adjudication: ADJUDICATION_ADVERSE_ACTION, status: STATUS_CONSIDER }
             : c
         )
       );
@@ -56,9 +55,15 @@ export const App: React.FC = () => {
     setCurrentPage('page1');
   };
 
+  const handleNavigate = (page: string) => {
+    if (page === 'page1' || page === 'page3') {
+      setCurrentPage(page as 'page1' | 'page3');
+    }
+  };
+
   return (
     <div className="app-container">
-      <Sidebar />
+      <Sidebar activePage={currentPage} onNavigate={handleNavigate} />
 
       {currentPage === 'page1' && (
         <CandidatesTable
@@ -75,9 +80,9 @@ export const App: React.FC = () => {
         />
       )}
 
-      {currentPage === 'page3' && selectedCandidate && (
+      {currentPage === 'page3' && (
         <PreAdverseAction
-          candidate={selectedCandidate}
+          candidate={selectedCandidate || candidates[0]}
           onBack={handleBackToDetails}
           onPreviewNotice={handlePreviewNotice}
         />
