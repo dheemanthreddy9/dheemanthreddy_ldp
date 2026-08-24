@@ -1,5 +1,5 @@
 import Typography from "../../atoms/Typography";
-import { TEXTS } from "../../../utils/constants";
+import { TEXTS, CONTRACT_TABLE_HEADERS, MOCK_CONTRACTS } from "../../../utils/constants";
 
 const ContractTable = () => {
   return (
@@ -10,10 +10,10 @@ const ContractTable = () => {
         <Typography text={TEXTS.YOUR_FUNDING} variant="subtitle" />
 
         <div className="tabs">
-  <button className="tab active-tab">{TEXTS.MY_CONTRACTS}</button>
+          <button className="tab active-tab">{TEXTS.MY_CONTRACTS}</button>
 
-  <button className="tab">{TEXTS.MY_CASH_KICKS}</button>
-</div>
+          <button className="tab">{TEXTS.MY_CASH_KICKS}</button>
+        </div>
 
       </div>
 
@@ -22,32 +22,24 @@ const ContractTable = () => {
         <thead>
 
           <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Per Payment</th>
-            <th>Term Length</th>
-            <th>Payment Remaining</th>
+            {CONTRACT_TABLE_HEADERS.map((header) => (
+              <th key={header}>{header}</th>
+            ))}
           </tr>
 
         </thead>
 
         <tbody>
 
-          <tr>
-            <td>Contract 1</td>
-            <td>Monthly</td>
-            <td>$12,000</td>
-            <td>12 months</td>
-            <td>$126,000</td>
-          </tr>
-
-          <tr>
-            <td>Contract 2</td>
-            <td>Monthly</td>
-            <td>$6,000</td>
-            <td>9 months</td>
-            <td>$63,000</td>
-          </tr>
+          {MOCK_CONTRACTS.map((contract) => (
+            <tr key={contract.id}>
+              <td>{contract.name}</td>
+              <td>{contract.type}</td>
+              <td>{contract.perPayment}</td>
+              <td>{contract.termLength}</td>
+              <td>{contract.paymentRemaining}</td>
+            </tr>
+          ))}
 
         </tbody>
 

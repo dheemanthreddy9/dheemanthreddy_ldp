@@ -10,6 +10,7 @@ import SummaryCard from "./components/molecules/SummaryCard";
 import ActionCard from "./components/molecules/ActionCard";
 import ProfileMenu from "./components/molecules/ProfileMenu";
 import ContractTable from "./components/molecules/CashAceleration";
+import { TEXTS } from "./utils/constants";
 
 import {
   FiHome,
@@ -39,7 +40,7 @@ const App = () => {
           />
 
           <Typography
-            text="Seeder"
+            text={TEXTS.LOGO}
             variant="subtitle"
           />
 
@@ -49,12 +50,12 @@ const App = () => {
 
           <SidebarItem
             icon={FiHome}
-            text="Home"
+            text={TEXTS.HOME}
           />
 
           <SidebarItem
             icon={FiLink2}
-            text="Cash Acceleration"
+            text={TEXTS.CASH_ACCELERATION}
             active
           />
 
@@ -64,7 +65,7 @@ const App = () => {
 
           <SidebarItem
             icon={FiPlayCircle}
-            text="Watch How To"
+            text={TEXTS.WATCH_HOW_TO}
           />
 
         </div>
@@ -80,12 +81,12 @@ const App = () => {
           <div>
 
             <Typography
-              text="Cash acceleration"
+              text={TEXTS.HEADER_TITLE}
               variant="title"
             />
 
             <Typography
-              text="Place to create new cash kicks to run your business"
+              text={TEXTS.HEADER_SUBTITLE}
               variant="caption"
             />
 
@@ -93,7 +94,7 @@ const App = () => {
 
           <ProfileMenu
             image={avatar}
-            name="Jessie Wilson"
+            name={TEXTS.USER_NAME}
           />
 
         </div>
@@ -106,28 +107,28 @@ const App = () => {
 
             <SummaryCard
               icon={FiCalendar}
-              title="Term cap"
-              value="12 Months"
+              title={TEXTS.TERM_CAP_TITLE}
+              value={TEXTS.TERM_CAP_VALUE}
             />
 
             <SummaryCard
               icon={FiFileText}
-              title="Available Credit"
-              value="$709.45k"
+              title={TEXTS.AVAILABLE_CREDIT_TITLE}
+              value={TEXTS.AVAILABLE_CREDIT_VALUE}
             />
 
             <SummaryCard
               icon={FiPercent}
-              title="Max Interest Rate"
-              value="12.00%"
+              title={TEXTS.MAX_INTEREST_RATE_TITLE}
+              value={TEXTS.MAX_INTEREST_RATE_VALUE}
             />
 
           </div>
 
           <ActionCard
-            title="Launch a new Cash Kick"
-            description="You have upto $709,546 available for a new cash advance."
-            buttonText="New Cash Kick"
+            title={TEXTS.ACTION_CARD_TITLE}
+            description={TEXTS.ACTION_CARD_DESCRIPTION}
+            buttonText={TEXTS.ACTION_CARD_BUTTON}
           />
 
         </div>
