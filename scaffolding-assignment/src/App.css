@@ -695,3 +695,41 @@ body::-webkit-scrollbar,
 .contracts-empty-text {
   color: var(--color-text-secondary);
 }
+
+.rtl-practice-container {
+  padding: 32px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.rtl-practice-section {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  padding: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--bg-card);
+}
+
+.rtl-practice-counter-buttons {
+  margin-top: 16px;
+  display: flex;
+  gap: 16px;
+}
+
+.rtl-practice-alert {
+  margin-bottom: 16px;
+}
+
+.rtl-practice-field-wrapper {
+  margin-bottom: 16px;
+}
+
+.table-loading-cell {
+  padding-top: 32px !important;
+  padding-bottom: 32px !important;
+}
+
+.table-loading-spinner {
+  color: var(--color-text-muted) !important;
+}
