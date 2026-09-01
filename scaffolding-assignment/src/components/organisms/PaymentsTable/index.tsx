@@ -4,6 +4,7 @@ import Typography from '../../atoms/Typography';
 import DataTable from '../../molecules/DataTable';
 import { mockData } from '../../../data/mockData';
 import { getPayments } from '../../../services/apiService';
+import { API_CONSTANTS } from '../../../constants/apiConstants';
 import type { Payment } from '../../../types/api';
 
 export const PaymentsTable: React.FC = () => {
@@ -24,8 +25,8 @@ export const PaymentsTable: React.FC = () => {
         }
       } catch (err) {
         if (isMounted) {
-          console.error('Failed to fetch payments from API:', err);
-          setError('Failed to load data from server. Displaying mock data.');
+          console.error(err);
+          setError(API_CONSTANTS.ERROR_MESSAGES.FETCH_PAYMENTS_FAILED);
         }
       } finally {
         if (isMounted) {

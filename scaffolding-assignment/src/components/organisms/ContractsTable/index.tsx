@@ -5,6 +5,7 @@ import Button from '../../atoms/Button';
 import DataTable from '../../molecules/DataTable';
 import { mockData } from '../../../data/mockData';
 import { getContracts, getCashKicks } from '../../../services/apiService';
+import { API_CONSTANTS } from '../../../constants/apiConstants';
 import type { Contract, CashKick } from '../../../types/api';
 
 type ContractsTab = 'contracts' | 'cashKicks';
@@ -34,8 +35,8 @@ export const ContractsTable: React.FC = () => {
         }
       } catch (err) {
         if (isMounted) {
-          console.error('Failed to fetch contracts or cash kicks from API:', err);
-          setError('Failed to load data from server. Displaying mock data.');
+          console.error(err);
+          setError(API_CONSTANTS.ERROR_MESSAGES.FETCH_CONTRACTS_FAILED);
         }
       } finally {
         if (isMounted) {

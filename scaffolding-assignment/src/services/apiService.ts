@@ -1,56 +1,41 @@
 import axios, { type AxiosInstance } from 'axios';
 import type { Payment, Contract, CashKick } from '../types/api';
+import { API_CONSTANTS } from '../constants/apiConstants';
 
-const BASE_URL = 'http://localhost:3001';
 export const apiClient: AxiosInstance = axios.create({
-  baseURL: BASE_URL,
+  baseURL: API_CONSTANTS.BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },
-  timeout: 5000,
+  timeout: API_CONSTANTS.TIMEOUT_MS,
 });
 
-/**
- * Fetch payments list asynchronously from API using Axios.
- */
 export const getPayments = async (): Promise<Payment[]> => {
-  const response = await apiClient.get<Payment[]>('/payments');
+  const response = await apiClient.get<Payment[]>(API_CONSTANTS.ENDPOINTS.PAYMENTS);
   return response.data;
 };
 
-/**
- * Fetch contracts list asynchronously from API using Axios.
- */
 export const getContracts = async (): Promise<Contract[]> => {
-  const response = await apiClient.get<Contract[]>('/contracts');
+  const response = await apiClient.get<Contract[]>(API_CONSTANTS.ENDPOINTS.CONTRACTS);
   return response.data;
 };
 
-/**
- * Fetch cash kicks list asynchronously from API using Axios.
- */
 export const getCashKicks = async (): Promise<CashKick[]> => {
-  const response = await apiClient.get<CashKick[]>('/cashKicks');
+  const response = await apiClient.get<CashKick[]>(API_CONSTANTS.ENDPOINTS.CASH_KICKS);
   return response.data;
 };
 
-/**
- * Create a new cash kick entry via API using Axios.
- */
 export const createCashKick = async (
   cashKickData: Omit<CashKick, 'id'>
 ): Promise<CashKick> => {
-  const response = await apiClient.post<CashKick>('/cashKicks', cashKickData);
+  const response = await apiClient.post<CashKick>(API_CONSTANTS.ENDPOINTS.CASH_KICKS, cashKickData);
   return response.data;
 };
 
-/**
- * Create a new payment entry via API using Axios.
- */
 export const createPayment = async (
   paymentData: Omit<Payment, 'id'>
 ): Promise<Payment> => {
-  const response = await apiClient.post<Payment>('/payments', paymentData);
+  const response = await apiClient.post<Payment>(API_CONSTANTS.ENDPOINTS.PAYMENTS, paymentData);
   return response.data;
 };
 

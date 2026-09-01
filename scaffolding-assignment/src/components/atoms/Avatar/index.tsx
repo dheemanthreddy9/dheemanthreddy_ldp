@@ -9,13 +9,12 @@ export interface AvatarProps extends MuiAvatarProps {
   className?: string;
 }
 
-const Avatar: React.FC<AvatarProps> = ({ src, alt, size = 40, className, style, ...props }) => {
+const Avatar: React.FC<AvatarProps> = ({ src, alt, size, className, ...props }) => {
   return (
     <MuiAvatar
       src={src}
       alt={alt}
       className={className}
-      style={{ width: size, height: size, ...style }}
       {...props}
     />
   );
