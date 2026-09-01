@@ -1,0 +1,47 @@
+#root {
+  width: 100%;
+}
+
+.app {
+  padding: 30px;
+}
+
+.api-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.api-container section {
+  margin-top: 25px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+button {
+  padding: 10px 16px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.user-card {
+  margin-top: 15px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  margin-right: 10px;
+}
