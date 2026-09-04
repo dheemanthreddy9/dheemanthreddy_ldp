@@ -3,13 +3,15 @@ import { Card, CardContent, Box } from '@mui/material';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import Typography from '../../atoms/Typography';
 import Icon from '../../atoms/Icon';
-import { icons } from '../../../assets/icons';
+import calendarIcon from '../../../assets/calendar.svg';
+import documentDownloadIcon from '../../../assets/document-download.svg';
+import percentageSquareIcon from '../../../assets/percentage-square.svg';
 import { mockData } from '../../../data/mockData';
 
 const statIcons = {
-  termCap: icons.calendar,
-  availableCredit: icons.documentDownload,
-  maxInterestRate: icons.percentageSquare,
+  termCap: calendarIcon,
+  availableCredit: documentDownloadIcon,
+  maxInterestRate: percentageSquareIcon,
 };
 
 export const CashAccelerationStats: React.FC = () => {

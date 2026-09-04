@@ -3,7 +3,8 @@ import { Card, CardContent, Box } from '@mui/material';
 import Typography from '../../atoms/Typography';
 import Icon from '../../atoms/Icon';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
-import { icons } from '../../../assets/icons';
+import receiptTextIcon from '../../../assets/receipt-text.svg';
+import circularProgressIcon from '../../../assets/circular-progress.svg';
 import { mockData } from '../../../data/mockData';
 
 export interface StatMetricCardProps {
@@ -45,7 +46,7 @@ export const TermCard: React.FC = () => {
   const { metrics } = mockData;
   return (
     <StatMetricCard
-      iconSrc={icons.receiptText}
+      iconSrc={receiptTextIcon}
       badgeText={metrics.term.dueLabel}
       label={`${metrics.term.labelPrefix}${metrics.term.date}`}
       value={metrics.term.amount}
@@ -57,7 +58,7 @@ export const OutstandingCard: React.FC = () => {
   const { metrics } = mockData;
   return (
     <StatMetricCard
-      iconSrc={icons.circularProgress}
+      iconSrc={circularProgressIcon}
       label={metrics.outstanding.label}
       value={metrics.outstanding.amount}
     />

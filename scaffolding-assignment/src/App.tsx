@@ -1,7 +1,7 @@
 import React from 'react';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import theme from './theme/theme';
-import Dashboard from './components/pages/Dashboard';
+import Dashboard from './components/pages/DashboardPage';
 import './App.css';
 
 const App: React.FC = () => {

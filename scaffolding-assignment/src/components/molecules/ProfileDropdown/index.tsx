@@ -1,6 +1,5 @@
 import React from 'react';
 import { Box, Menu, MenuItem, ListItemIcon, Divider } from '@mui/material';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 import Typography from '../../atoms/Typography';

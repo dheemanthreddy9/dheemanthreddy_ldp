@@ -2,7 +2,10 @@ import React from 'react';
 import { Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import Typography from '../../atoms/Typography';
 import Icon from '../../atoms/Icon';
-import { icons } from '../../../assets/icons';
+import logoIcon from '../../../assets/seeder-logo.svg';
+import homeIcon from '../../../assets/home.svg';
+import coinIcon from '../../../assets/coin.svg';
+import flashIcon from '../../../assets/flash.svg';
 import { mockData } from '../../../data/mockData';
 import type { AppPage } from '../../../types/navigation';
 
@@ -17,7 +20,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activePage, onNavigate }) => {
   return (
     <Box className="sidebar-container">
       <Box className="sidebar-header">
-        <Icon src={icons.logo} alt={brand.name} className="sidebar-logo-image" />
+        <Icon src={logoIcon} alt={brand.name} className="sidebar-logo-image" />
         <Typography variant="h6" className="sidebar-brand-name">{brand.name}</Typography>
       </Box>
 
@@ -29,7 +32,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activePage, onNavigate }) => {
             onClick={() => onNavigate('home')}
           >
             <ListItemIcon className={activePage === 'home' ? 'sidebar-nav-icon-active' : 'sidebar-nav-icon'}>
-              <Icon src={icons.home} alt="" className="sidebar-nav-icon-image" />
+              <Icon src={homeIcon} alt="" className="sidebar-nav-icon-image" />
             </ListItemIcon>
             <ListItemText
               primary={
@@ -51,7 +54,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activePage, onNavigate }) => {
             onClick={() => onNavigate('cashAcceleration')}
           >
             <ListItemIcon className={activePage === 'cashAcceleration' ? 'sidebar-nav-icon-active' : 'sidebar-nav-icon'}>
-              <Icon src={icons.coin} alt="" className="sidebar-nav-icon-image" />
+              <Icon src={coinIcon} alt="" className="sidebar-nav-icon-image" />
             </ListItemIcon>
             <ListItemText
               primary={
@@ -71,7 +74,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activePage, onNavigate }) => {
         <ListItem disablePadding>
           <ListItemButton className="sidebar-nav-button">
             <ListItemIcon className="sidebar-nav-icon">
-              <Icon src={icons.flash} alt="" className="sidebar-nav-icon-image" />
+              <Icon src={flashIcon} alt="" className="sidebar-nav-icon-image" />
             </ListItemIcon>
             <ListItemText
               primary={<Typography variant="body2" className="sidebar-nav-text">{sidebar.watchHowTo}</Typography>}
