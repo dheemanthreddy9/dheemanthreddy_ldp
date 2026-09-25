@@ -1,0 +1,293 @@
+{
+	"info": {
+		"_postman_id": "8f3e2a10-4b91-4e12-98ab-312456789abc",
+		"name": "Hibernate Entity Relationship Mappings API",
+		"description": "Postman Collection for testing Hibernate Advanced Entity Relationship Mappings: @OneToOne, @OneToMany, @ManyToOne, @ManyToMany, @JoinColumn, @JoinTable, Self-Referencing, Composite Key, Collection Mappings, Cascade Types, and Fetch Strategies.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Create Department (One-to-Many Parent)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Engineering\",\n    \"location\": \"Building A - Floor 4\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/departments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"departments"
+					]
+				}
+			}
+		},
+		{
+			"name": "2. Create Project (Many-to-Many Target)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Cloud Migration Portal\",\n    \"clientName\": \"Acme Corp\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/projects",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"projects"
+					]
+				}
+			}
+		},
+		{
+			"name": "3. Create Manager Employee (@OneToOne, Collections)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Sarah Connor\",\n    \"email\": \"sarah@company.com\",\n    \"jobTitle\": \"Engineering Manager\",\n    \"address\": {\n        \"street\": \"100 Innovation Way\",\n        \"city\": \"San Francisco\",\n        \"state\": \"CA\",\n        \"zipCode\": \"94105\"\n    },\n    \"phoneNumbers\": [\n        \"+1-555-0192\",\n        \"+1-555-0193\"\n    ],\n    \"skills\": {\n        \"Java\": \"Expert\",\n        \"Spring Boot\": \"Expert\",\n        \"Architecture\": \"Advanced\"\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees"
+					]
+				}
+			}
+		},
+		{
+			"name": "4. Create Engineer Employee (@OneToOne, Collections)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"john@company.com\",\n    \"jobTitle\": \"Backend Developer\",\n    \"address\": {\n        \"street\": \"404 Code Lane\",\n        \"city\": \"Austin\",\n        \"state\": \"TX\",\n        \"zipCode\": \"73301\"\n    },\n    \"phoneNumbers\": [\n        \"+1-555-0188\"\n    ],\n    \"skills\": {\n        \"Java\": \"Intermediate\",\n        \"Hibernate\": \"Advanced\"\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees"
+					]
+				}
+			}
+		},
+		{
+			"name": "5. Assign Department to Employee (@ManyToOne / @JoinColumn)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/employees/2/department/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees",
+						"2",
+						"department",
+						"1"
+					]
+				}
+			}
+		},
+		{
+			"name": "6. Assign Manager to Employee (Self-Referencing Relationship)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/employees/2/manager/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees",
+						"2",
+						"manager",
+						"1"
+					]
+				}
+			}
+		},
+		{
+			"name": "7. Assign Project to Employee (@ManyToMany / @JoinTable)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/employees/2/projects/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees",
+						"2",
+						"projects",
+						"1"
+					]
+				}
+			}
+		},
+		{
+			"name": "8. Create Project Assignment (Composite Key @EmbeddedId)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"employeeId\": 2,\n    \"projectId\": 1,\n    \"role\": \"Lead Software Architect\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/assignments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"assignments"
+					]
+				}
+			}
+		},
+		{
+			"name": "9. Get All Employees (Full Relationship Graph)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees"
+					]
+				}
+			}
+		},
+		{
+			"name": "10. Get All Departments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/departments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"departments"
+					]
+				}
+			}
+		},
+		{
+			"name": "11. Get All Project Assignments (Composite Key)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/assignments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"assignments"
+					]
+				}
+			}
+		},
+		{
+			"name": "12. Delete Department (Tests Cascade & orphanRemoval)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/departments/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"departments",
+						"1"
+					]
+				}
+			}
+		}
+	]
+}
