@@ -1,6 +1,10 @@
 package org.example;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "users")
@@ -14,12 +18,15 @@ public class User {
 
     private String email;
 
+    private Integer age;
+
     public User() {
     }
 
-    public User(String name, String email) {
+    public User(String name, String email, Integer age) {
         this.name = name;
         this.email = email;
+        this.age = age;
     }
 
     public Long getId() {
@@ -46,12 +53,21 @@ public class User {
         this.email = email;
     }
 
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
+                ", age=" + age +
                 '}';
     }
 }
