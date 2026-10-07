@@ -1,0 +1,17 @@
+# 1. Ignore everything by default
+/*
+
+# 2. Allow specific folders
+!/services/
+!/src/
+
+# 3. Allow essential project configuration files
+!.gitignore
+!pom.xml
+!package.json
+!package-lock.json
+
+# 4. Ignore target/build folders inside allowed directories (e.g., inside services)
+**/target/
+**/build/
+**/node_modules/
