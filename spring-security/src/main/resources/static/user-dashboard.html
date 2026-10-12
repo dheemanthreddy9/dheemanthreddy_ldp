@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Security Demo - User Area</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="brand">
+            <span>🔐</span> Spring Security Portal
+        </div>
+        <div class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/user-dashboard.html" class="active">User Area</a>
+            <a href="/admin-dashboard.html">Admin Area</a>
+            <a href="/logout" class="btn-logout">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <div>
+                    <h2>User Profile Dashboard</h2>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Protected Endpoint: <code>/user-dashboard.html</code></p>
+                </div>
+                <span id="role-badge" class="badge badge-user">ROLE_USER</span>
+            </div>
+
+            <div style="background: rgba(15, 23, 42, 0.5); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-color); margin-bottom: 1.5rem;">
+                <h4 style="margin-bottom: 1rem; color: var(--accent-blue);">Logged In Session Details</h4>
+                <p style="margin-bottom: 0.5rem;"><strong>Authenticated Username:</strong> <span id="user-name" style="color: var(--accent-green);">Loading...</span></p>
+                <p style="margin-bottom: 0.5rem;"><strong>Granted Authorities:</strong> <code id="user-authorities">Loading...</code></p>
+                <p><strong>Security Context Status:</strong> <span style="color: var(--accent-green);">Authenticated ✔</span></p>
+            </div>
+
+            <h4 style="margin-bottom: 0.75rem;">Backend API Test</h4>
+            <button onclick="fetchUserProfile()" class="btn-primary" style="max-width: 250px;">Fetch User API (/api/user/profile)</button>
+            
+            <pre id="api-result" style="margin-top: 1rem; background: rgba(0,0,0,0.4); padding: 1rem; border-radius: 8px; font-size: 0.85rem; display: none; color: #a7f3d0; overflow-x: auto;"></pre>
+        </div>
+    </div>
+
+    <footer>
+        Spring Security Internal Flow Demo &copy; 2026
+    </footer>
+
+    <script>
+        function fetchUserProfile() {
+            fetch('/api/user/profile')
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById('user-name').innerText = data.username || 'User';
+                    document.getElementById('user-authorities').innerText = JSON.stringify(data.authorities);
+                    document.getElementById('api-result').style.display = 'block';
+                    document.getElementById('api-result').innerText = JSON.stringify(data, null, 2);
+                })
+                .catch(err => {
+                    console.error(err);
+                });
+        }
+
+        // Auto fetch on load
+        fetchUserProfile();
+    </script>
+</body>
+</html>
