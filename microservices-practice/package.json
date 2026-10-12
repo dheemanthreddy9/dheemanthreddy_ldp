@@ -1,0 +1,20 @@
+{
+  "name": "microservices-practice",
+  "version": "1.0.0",
+  "description": "Simple E-Commerce Microservices Example in Node.js (Product Service, Order Service, API Gateway)",
+  "main": "services/api-gateway/index.js",
+  "scripts": {
+    "start:product": "node services/product-service/index.js",
+    "start:order": "node services/order-service/index.js",
+    "start:gateway": "node services/api-gateway/index.js",
+    "demo": "node demo.js"
+  },
+  "keywords": ["microservices", "express", "api-gateway", "architecture"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  }
+}
