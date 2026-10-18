@@ -105,4 +105,22 @@ class ProductControllerTest {
 
         verify(productService, times(1)).deleteProduct(1L);
     }
+
+    @Test
+    void testCreateProduct_ValidationError() throws Exception {
+        Product invalidProduct = new Product();
+        invalidProduct.setName("");
+        invalidProduct.setPrice(new BigDecimal("-5.00"));
+        invalidProduct.setStockQuantity(-1);
+
+        mockMvc.perform(post("/api/products")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(invalidProduct)))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.error").value("Bad Request"))
+                .andExpect(jsonPath("$.message").value("Validation failed"))
+                .andExpect(jsonPath("$.errors.name").exists())
+                .andExpect(jsonPath("$.errors.price").exists())
+                .andExpect(jsonPath("$.errors.stockQuantity").exists());
+    }
 }

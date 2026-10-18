@@ -1,6 +1,11 @@
 package com.example.orderservice.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -13,15 +18,22 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Customer name is mandatory")
+    @Size(min = 2, max = 100, message = "Customer name must be between 2 and 100 characters")
     @Column(nullable = false)
     private String customerName;
 
+    @NotNull(message = "Product ID is mandatory")
+    @Positive(message = "Product ID must be greater than zero")
     @Column(nullable = false)
     private Long productId;
 
+    @NotNull(message = "Quantity is mandatory")
+    @Min(value = 1, message = "Quantity must be at least 1")
     @Column(nullable = false)
     private Integer quantity;
 
+    @Positive(message = "Total price must be greater than zero")
     @Column(nullable = false)
     private BigDecimal totalPrice;
 

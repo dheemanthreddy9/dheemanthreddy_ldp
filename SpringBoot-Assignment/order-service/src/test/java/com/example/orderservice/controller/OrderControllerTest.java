@@ -105,4 +105,22 @@ class OrderControllerTest {
 
         verify(orderService, times(1)).deleteOrder(1L);
     }
+
+    @Test
+    void testCreateOrder_ValidationError() throws Exception {
+        Order invalidOrder = new Order();
+        invalidOrder.setCustomerName("");
+        invalidOrder.setProductId(-1L);
+        invalidOrder.setQuantity(0);
+
+        mockMvc.perform(post("/api/orders")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(invalidOrder)))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.error").value("Bad Request"))
+                .andExpect(jsonPath("$.message").value("Validation failed"))
+                .andExpect(jsonPath("$.errors.customerName").exists())
+                .andExpect(jsonPath("$.errors.productId").exists())
+                .andExpect(jsonPath("$.errors.quantity").exists());
+    }
 }
