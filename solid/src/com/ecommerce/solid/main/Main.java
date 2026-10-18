@@ -22,7 +22,6 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        // Dependency Inversion Principle (DIP): Instantiate dependencies and inject into OrderService
         TaxCalculator taxCalculator = new CategoryBasedTaxCalculator();
         DeliveryFeeCalculator deliveryFeeCalculator = new StandardDeliveryFeeCalculator();
         PaymentProcessor paymentProcessor = new UpiPaymentProcessor();
@@ -60,7 +59,6 @@ public class Main {
 
         orderService.processPayment(order, paymentDetails);
 
-        // Single Responsibility Principle (SRP): Receipt generation handled by dedicated ReceiptGenerator
         String receipt = receiptGenerator.generateReceipt(order);
         System.out.println(receipt);
     }

@@ -4,11 +4,6 @@ import com.ecommerce.solid.config.AppConfig;
 import com.ecommerce.solid.model.PaymentDetails;
 import com.ecommerce.solid.model.PaymentStatus;
 
-/**
- * Liskov Substitution Principle (LSP) & Open/Closed Principle (OCP):
- * Dedicated implementation of PaymentProcessor for UPI payments.
- * Can be substituted anywhere PaymentProcessor is expected without unexpected side-effects.
- */
 public class UpiPaymentProcessor implements PaymentProcessor {
 
     @Override

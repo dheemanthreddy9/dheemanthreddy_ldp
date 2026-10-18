@@ -4,10 +4,6 @@ import com.ecommerce.solid.config.AppConfig;
 import com.ecommerce.solid.model.PaymentDetails;
 import com.ecommerce.solid.model.PaymentStatus;
 
-/**
- * Liskov Substitution Principle (LSP) & Open/Closed Principle (OCP):
- * Dedicated implementation of PaymentProcessor for Net Banking payments.
- */
 public class NetBankingPaymentProcessor implements PaymentProcessor {
 
     @Override

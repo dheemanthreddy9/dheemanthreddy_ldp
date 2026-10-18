@@ -3,10 +3,6 @@ package com.ecommerce.solid.service.notification;
 import com.ecommerce.solid.config.AppConfig;
 import com.ecommerce.solid.model.Customer;
 
-/**
- * Single Responsibility Principle (SRP) & Liskov Substitution Principle (LSP):
- * SMS implementation of NotificationService.
- */
 public class SmsNotificationService implements NotificationService {
 
     private final String senderId;

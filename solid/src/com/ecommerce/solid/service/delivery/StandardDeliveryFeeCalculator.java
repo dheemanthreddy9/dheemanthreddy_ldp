@@ -2,10 +2,6 @@ package com.ecommerce.solid.service.delivery;
 
 import com.ecommerce.solid.config.AppConfig;
 
-/**
- * Standard implementation of DeliveryFeeCalculator.
- * Waives fee if subtotal meets or exceeds the free delivery threshold.
- */
 public class StandardDeliveryFeeCalculator implements DeliveryFeeCalculator {
 
     private final double freeDeliveryThreshold;

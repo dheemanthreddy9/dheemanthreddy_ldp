@@ -3,11 +3,6 @@ package com.ecommerce.solid.service.receipt;
 import com.ecommerce.solid.config.AppConfig;
 import com.ecommerce.solid.model.Order;
 
-/**
- * Single Responsibility Principle (SRP):
- * Standard text receipt formatting implementation.
- * Encapsulates receipt rendering without polluting the Order entity.
- */
 public class StandardReceiptGenerator implements ReceiptGenerator {
 
     @Override
