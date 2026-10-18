@@ -1,6 +1,5 @@
 package com.ecommerce.solid.model;
 
-import com.ecommerce.solid.config.AppConfig;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -70,29 +69,11 @@ public class Order {
 
     public double calculateSubtotal() {
         return items.stream()
-                .mapToDouble(item -> item.getTotalPrice())
+                .mapToDouble(OrderItem::getTotalPrice)
                 .sum();
     }
 
     public double calculateFinalTotal() {
         return calculateSubtotal() + taxAmount + deliveryFee;
-    }
-
-    public String generateReceipt() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("-----------------------------------------\n");
-        builder.append("ORDER RECEIPT - ").append(orderId).append("\n");
-        builder.append("Customer : ").append(customer.getFullName()).append("\n");
-        builder.append("Phone    : ").append(customer.getPhoneNumber()).append("\n");
-        builder.append("Status   : ").append(orderStatus).append("\n");
-        builder.append("-----------------------------------------\n");
-        items.forEach(item -> builder.append(item.toString()).append("\n"));
-        builder.append("-----------------------------------------\n");
-        builder.append("Subtotal     : ").append(AppConfig.CURRENCY_SYMBOL).append(String.format("%.2f", calculateSubtotal())).append(" ").append(AppConfig.DEFAULT_CURRENCY).append("\n");
-        builder.append("GST Tax      : ").append(AppConfig.CURRENCY_SYMBOL).append(String.format("%.2f", taxAmount)).append("\n");
-        builder.append("Delivery Fee : ").append(AppConfig.CURRENCY_SYMBOL).append(String.format("%.2f", deliveryFee)).append("\n");
-        builder.append("TOTAL AMOUNT : ").append(AppConfig.CURRENCY_SYMBOL).append(String.format("%.2f", calculateFinalTotal())).append(" ").append(AppConfig.DEFAULT_CURRENCY).append("\n");
-        builder.append("-----------------------------------------\n");
-        return builder.toString();
     }
 }

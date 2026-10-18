@@ -6,14 +6,35 @@ import com.ecommerce.solid.model.Order;
 import com.ecommerce.solid.model.OrderItem;
 import com.ecommerce.solid.model.PaymentDetails;
 import com.ecommerce.solid.service.OrderService;
+import com.ecommerce.solid.service.delivery.DeliveryFeeCalculator;
+import com.ecommerce.solid.service.delivery.StandardDeliveryFeeCalculator;
+import com.ecommerce.solid.service.notification.NotificationService;
+import com.ecommerce.solid.service.notification.SmsNotificationService;
+import com.ecommerce.solid.service.payment.PaymentProcessor;
+import com.ecommerce.solid.service.payment.UpiPaymentProcessor;
+import com.ecommerce.solid.service.receipt.ReceiptGenerator;
+import com.ecommerce.solid.service.receipt.StandardReceiptGenerator;
+import com.ecommerce.solid.service.tax.CategoryBasedTaxCalculator;
+import com.ecommerce.solid.service.tax.TaxCalculator;
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.Consumer;
 
 public class Main {
 
     public static void main(String[] args) {
-        OrderService orderService = new OrderService();
+        // Dependency Inversion Principle (DIP): Instantiate dependencies and inject into OrderService
+        TaxCalculator taxCalculator = new CategoryBasedTaxCalculator();
+        DeliveryFeeCalculator deliveryFeeCalculator = new StandardDeliveryFeeCalculator();
+        PaymentProcessor paymentProcessor = new UpiPaymentProcessor();
+        NotificationService notificationService = new SmsNotificationService();
+        ReceiptGenerator receiptGenerator = new StandardReceiptGenerator();
+
+        OrderService orderService = new OrderService(
+                taxCalculator,
+                deliveryFeeCalculator,
+                paymentProcessor,
+                notificationService
+        );
 
         Customer customer = new Customer(
                 "CUST-001", 
@@ -39,7 +60,8 @@ public class Main {
 
         orderService.processPayment(order, paymentDetails);
 
-        Consumer<Order> receiptPrinter = ord -> System.out.println(ord.generateReceipt());
-        receiptPrinter.accept(order);
+        // Single Responsibility Principle (SRP): Receipt generation handled by dedicated ReceiptGenerator
+        String receipt = receiptGenerator.generateReceipt(order);
+        System.out.println(receipt);
     }
 }
