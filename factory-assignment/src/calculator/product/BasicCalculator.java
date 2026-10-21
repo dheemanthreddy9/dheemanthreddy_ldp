@@ -3,10 +3,6 @@ package calculator.product;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Concrete Product representing the Basic / Standard Calculator mode
- * (equivalent to Windows Standard Calculator or Ubuntu Simple Mode).
- */
 public class BasicCalculator implements Calculator {
 
     @Override
@@ -140,7 +136,7 @@ public class BasicCalculator implements Calculator {
                 );
 
             case "PERCENT":
-                // Calculates percentage of value: e.g. 20 percent of 150 = 30
+
                 if (operands.length == 1) {
                     return new CalculationResult(operands[0] + "%", operands[0] / 100.0, formatNumber(operands[0] / 100.0));
                 } else if (operands.length == 2) {

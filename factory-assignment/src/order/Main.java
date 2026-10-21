@@ -19,17 +19,15 @@ public class Main {
         System.out.println("Discovered Categories via Factory: " + OnlineOrderProcessingFactory.getSupportedCategories());
         System.out.println();
 
-        // Simulated incoming batch of orders from various categories
         List<Order> incomingOrders = createSampleOrders();
 
-        // Process each order generically without any category-specific switch/case
         for (int i = 0; i < incomingOrders.size(); i++) {
             Order order = incomingOrders.get(i);
             System.out.printf("[%d/%d] Processing incoming order: %s (Category: %s)...%n",
                     i + 1, incomingOrders.size(), order.getOrderId(), order.getCategory());
 
             try {
-                // Factory decouples client from concrete processor classes
+
                 OrderProcessor processor = OnlineOrderProcessingFactory.getProcessor(order.getCategory());
                 ProcessingResult result = processor.process(order);
                 result.printReceipt();
@@ -55,7 +53,6 @@ public class Main {
     private static List<Order> createSampleOrders() {
         List<Order> orders = new ArrayList<>();
 
-        // 1. Food Order
         orders.add(new Order(
                 "ORD-FD-101",
                 "Arun Varma",
@@ -68,7 +65,6 @@ public class Main {
                 "Flat 402, Green Meadows, Hyderabad"
         ));
 
-        // 2. Clothing Order
         orders.add(new Order(
                 "ORD-CL-202",
                 "Sneha Rao",
@@ -80,7 +76,6 @@ public class Main {
                 "House #12, Indiranagar, Bangalore"
         ));
 
-        // 3. Electronics Order (Demonstrating new order type seamlessly processed!)
         orders.add(new Order(
                 "ORD-EL-303",
                 "Vikram Malhotra",

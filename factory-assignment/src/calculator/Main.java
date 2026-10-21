@@ -20,18 +20,11 @@ public class Main {
         runAutomatedDemonstration();
     }
 
-    /**
-     * Comprehensive automated demonstration showcasing all three calculator modes
-     * instantiated through their respective Factory Method creators.
-     */
     public static void runAutomatedDemonstration() {
         System.out.println("=========================================================================");
         System.out.println("    WINDOWS & UBUNTU MULTI-MODE CALCULATOR (FACTORY METHOD PATTERN)     ");
         System.out.println("=========================================================================");
 
-        // ---------------------------------------------------------------------
-        // 1. BASIC / STANDARD CALCULATOR MODE
-        // ---------------------------------------------------------------------
         CalculatorFactory basicFactory = new BasicCalculatorFactory();
         Calculator basicCalc = basicFactory.launchCalculator();
 
@@ -43,65 +36,54 @@ public class Main {
         performAndPrint(basicCalc, "%", 29, 6);
         performAndPrint(basicCalc, "sqrt", 169);
         performAndPrint(basicCalc, "1/x", 8);
-        performAndPrint(basicCalc, "PERCENT", 15, 200); // 15% of 200
+        performAndPrint(basicCalc, "PERCENT", 15, 200);
 
-        // ---------------------------------------------------------------------
-        // 2. SCIENTIFIC CALCULATOR MODE
-        // ---------------------------------------------------------------------
         System.out.println("\n");
         CalculatorFactory scientificFactory = new ScientificCalculatorFactory();
         Calculator scientificCalc = scientificFactory.launchCalculator();
 
         System.out.println("\n--- [Scientific Mode Calculations] ---");
-        performAndPrint(scientificCalc, "sin", 30);      // sin(30 deg) = 0.5
-        performAndPrint(scientificCalc, "cos", 60);      // cos(60 deg) = 0.5
-        performAndPrint(scientificCalc, "tan", 45);      // tan(45 deg) = 1.0
-        performAndPrint(scientificCalc, "log", 1000);    // log10(1000) = 3
-        performAndPrint(scientificCalc, "ln", Math.E);   // ln(e) = 1
-        performAndPrint(scientificCalc, "pow", 2, 10);   // 2^10 = 1024
-        performAndPrint(scientificCalc, "exp", 2);       // e^2
-        performAndPrint(scientificCalc, "fact", 6);      // 6! = 720
-        performAndPrint(scientificCalc, "cbrt", 27);     // cbrt(27) = 3
-        performAndPrint(scientificCalc, "pi");           // Pi constant
-        performAndPrint(scientificCalc, "e");            // Euler constant
+        performAndPrint(scientificCalc, "sin", 30);
+        performAndPrint(scientificCalc, "cos", 60);
+        performAndPrint(scientificCalc, "tan", 45);
+        performAndPrint(scientificCalc, "log", 1000);
+        performAndPrint(scientificCalc, "ln", Math.E);
+        performAndPrint(scientificCalc, "pow", 2, 10);
+        performAndPrint(scientificCalc, "exp", 2);
+        performAndPrint(scientificCalc, "fact", 6);
+        performAndPrint(scientificCalc, "cbrt", 27);
+        performAndPrint(scientificCalc, "pi");
+        performAndPrint(scientificCalc, "e");
 
-        // Toggle to Radians
         System.out.println("\nSwitching angle mode to Radians...");
         scientificCalc.calculate("mode");
-        performAndPrint(scientificCalc, "sin", Math.PI / 2); // sin(pi/2 rad) = 1.0
+        performAndPrint(scientificCalc, "sin", Math.PI / 2);
 
-        // ---------------------------------------------------------------------
-        // 3. PROGRAMMER CALCULATOR MODE
-        // ---------------------------------------------------------------------
         System.out.println("\n");
         CalculatorFactory programmerFactory = new ProgrammerCalculatorFactory();
         Calculator programmerCalc = programmerFactory.launchCalculator();
 
         System.out.println("\n--- [Programmer Mode Calculations (HEX / DEC / OCT / BIN)] ---");
 
-        // Display decimal 42 across all bases
         System.out.println("[Radix Display for Value 42]:");
         performAndPrint(programmerCalc, "DISP", 42);
 
-        // Display decimal 255 across all bases
         System.out.println("\n[Radix Display for Value 255]:");
         performAndPrint(programmerCalc, "DISP", 255);
 
-        // Bitwise operations
         System.out.println("\n[Bitwise Logic & Shift Operations]:");
         performAndPrint(programmerCalc, "AND", 0x0F, 0x33);
         performAndPrint(programmerCalc, "OR", 0xF0, 0x0F);
         performAndPrint(programmerCalc, "XOR", 0xFF, 0x0F);
-        performAndPrint(programmerCalc, "LSH", 1, 8);  // 1 << 8 = 256
-        performAndPrint(programmerCalc, "RSH", 256, 4); // 256 >> 4 = 16
+        performAndPrint(programmerCalc, "LSH", 1, 8);
+        performAndPrint(programmerCalc, "RSH", 256, 4);
 
-        // Word Size cycling
         System.out.println("\n[Word Size Switching in Programmer Mode]:");
         System.out.println("Current: " + programmerCalc.getModeName());
-        performAndPrint(programmerCalc, "WORDSIZE"); // Cycles to BYTE
+        performAndPrint(programmerCalc, "WORDSIZE");
         System.out.println("Current: " + programmerCalc.getModeName());
         performAndPrint(programmerCalc, "DISP", 127);
-        performAndPrint(programmerCalc, "NOT", 0); // In BYTE, NOT(0) = 0xFF (-1 signed)
+        performAndPrint(programmerCalc, "NOT", 0);
 
         System.out.println("\n=========================================================================");
         System.out.println("  FACTORY METHOD DESIGN PATTERN IMPLEMENTATION COMPLETE                  ");
@@ -121,9 +103,6 @@ public class Main {
         }
     }
 
-    /**
-     * Interactive console session allowing live user interaction.
-     */
     private static void runInteractiveSession() {
         Scanner scanner = new Scanner(System.in);
         Calculator currentCalculator = new BasicCalculatorFactory().launchCalculator();

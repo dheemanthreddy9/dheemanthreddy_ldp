@@ -7,15 +7,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
-/**
- * Concrete processor for Electronics orders.
- * DEMONSTRATION OF OPEN-CLOSED PRINCIPLE (OCP):
- * This class was added to the system as a brand new order category WITHOUT modifying
- * OnlineOrderProcessingFactory.java or Main.java!
- */
 public class ElectronicsOrderProcessor implements OrderProcessor {
 
-    private static final double ELECTRONICS_TAX_RATE = 0.18; // 18% Electronics tax
+    private static final double ELECTRONICS_TAX_RATE = 0.18;
     private static final double TRANSIT_INSURANCE_AND_CRATING = 12.00;
     private static final double SECURE_COURIER_FEE = 8.50;
 

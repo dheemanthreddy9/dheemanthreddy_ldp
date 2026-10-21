@@ -7,12 +7,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
-/**
- * Concrete processor for Clothing & Apparel orders.
- */
 public class ClothingOrderProcessor implements OrderProcessor {
 
-    private static final double APPAREL_TAX_RATE = 0.12; // 12% GST/VAT
+    private static final double APPAREL_TAX_RATE = 0.12;
     private static final double STANDARD_SHIPPING = 6.00;
     private static final double FREE_SHIPPING_THRESHOLD = 50.00;
 

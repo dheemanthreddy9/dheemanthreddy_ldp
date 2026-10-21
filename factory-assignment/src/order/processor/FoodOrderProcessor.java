@@ -7,13 +7,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
-/**
- * Concrete processor for perishable Food orders.
- */
 public class FoodOrderProcessor implements OrderProcessor {
 
-    private static final double FOOD_TAX_RATE = 0.05; // 5% tax
-    private static final double PACKAGING_FEE = 2.50; // Temperature control packaging
+    private static final double FOOD_TAX_RATE = 0.05;
+    private static final double PACKAGING_FEE = 2.50;
     private static final double EXPRESS_DELIVERY_FEE = 4.00;
 
     @Override
@@ -24,7 +21,7 @@ public class FoodOrderProcessor implements OrderProcessor {
     @Override
     public ProcessingResult process(Order order) {
         System.out.println("[FoodOrderProcessor] Validating perishable food items and kitchen dispatch for " + order.getOrderId());
-        
+
         double subTotal = order.getSubTotal();
         double tax = subTotal * FOOD_TAX_RATE;
         double shipping = PACKAGING_FEE + EXPRESS_DELIVERY_FEE;

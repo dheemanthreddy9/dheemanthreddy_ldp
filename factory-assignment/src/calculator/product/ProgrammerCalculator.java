@@ -2,12 +2,6 @@ package calculator.product;
 
 import java.util.*;
 
-/**
- * Concrete Product representing the Programmer Calculator mode
- * (equivalent to Windows Programmer Calculator or Ubuntu Programming Mode).
- * Supports multi-base displays (HEX, DEC, OCT, BIN), word sizes (BYTE, WORD, DWORD, QWORD),
- * bitwise logic (AND, OR, XOR, NOT), and bit shifts (LSH, RSH, ROL, ROR).
- */
 public class ProgrammerCalculator implements Calculator {
 
     public enum WordSize {
@@ -101,7 +95,6 @@ public class ProgrammerCalculator implements Calculator {
             return new CalculationResult("WordSize", currentWordSize.getBits(), currentWordSize.getLabel());
         }
 
-        // Programmer mode operates on integer representations
         long[] longOperands = new long[operands.length];
         for (int i = 0; i < operands.length; i++) {
             longOperands[i] = applyWordSize((long) operands[i]);
@@ -234,7 +227,7 @@ public class ProgrammerCalculator implements Calculator {
         }
         long mask = currentWordSize.getMask();
         long masked = val & mask;
-        // Sign extend for signed integer representation
+
         int bits = currentWordSize.getBits();
         long signBit = 1L << (bits - 1);
         if ((masked & signBit) != 0) {
@@ -247,21 +240,17 @@ public class ProgrammerCalculator implements Calculator {
         Map<String, String> reps = new LinkedHashMap<>();
         int bits = currentWordSize.getBits();
 
-        // 1. HEX
         long unsignedVal = currentWordSize == WordSize.QWORD ? value : (value & currentWordSize.getMask());
         String hexStr = Long.toHexString(unsignedVal).toUpperCase();
         int hexDigits = bits / 4;
         hexStr = padLeft(hexStr, hexDigits, '0');
         reps.put("HEX", "0x" + hexStr);
 
-        // 2. DEC
         reps.put("DEC", String.valueOf(value));
 
-        // 3. OCT
         String octStr = Long.toOctalString(unsignedVal);
         reps.put("OCT", "0" + octStr);
 
-        // 4. BIN (formatted in 4-bit nibbles)
         String binStr = Long.toBinaryString(unsignedVal);
         binStr = padLeft(binStr, bits, '0');
         reps.put("BIN", formatBinaryNibbles(binStr));

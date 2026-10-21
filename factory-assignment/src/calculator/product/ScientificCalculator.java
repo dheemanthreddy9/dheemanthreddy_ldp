@@ -4,13 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Concrete Product representing the Scientific Calculator mode
- * (equivalent to Windows Scientific Calculator or Ubuntu Advanced Mode).
- */
 public class ScientificCalculator implements Calculator {
 
-    private boolean degreeMode = true; // Default angle unit: Degrees (as in Windows Calculator)
+    private boolean degreeMode = true;
 
     public boolean isDegreeMode() {
         return degreeMode;
@@ -60,12 +56,11 @@ public class ScientificCalculator implements Calculator {
 
         String op = operation.trim().toUpperCase();
 
-        // 1. Check basic arithmetic delegation
         try {
             BasicCalculator basic = new BasicCalculator();
             return basic.calculate(operation, operands);
         } catch (UnsupportedOperationException ignored) {
-            // Not a basic operation, proceed with scientific operations
+
         }
 
         switch (op) {
@@ -83,7 +78,7 @@ public class ScientificCalculator implements Calculator {
             case "COS":
                 validateOperands(1, operands, "cos");
                 double radCos = degreeMode ? Math.toRadians(operands[0]) : operands[0];
-                // Handle 90° cosine precision artifact
+
                 double cosVal = Math.abs(Math.cos(radCos)) < 1e-15 ? 0.0 : Math.cos(radCos);
                 return new CalculationResult("cos(" + operands[0] + (degreeMode ? "°" : " rad") + ")", cosVal, formatNumber(cosVal));
 

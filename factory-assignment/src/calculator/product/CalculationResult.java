@@ -4,10 +4,6 @@ import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/**
- * Encapsulates the output of a calculation, including numeric result,
- * expression string, and multi-base representations (for Programmer mode).
- */
 public class CalculationResult {
     private final String expression;
     private final double numericValue;
